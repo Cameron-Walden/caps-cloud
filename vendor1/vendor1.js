@@ -26,10 +26,6 @@ const payload = {
   TopicArn: topic,
 };
 
-
-//   Set it up to produce a new message to the “pickup” topic every few seconds, simulating an order
-// The order id and customer name can be randomized
-// Include the ARN to the vendor’s personal delivery queue
 setInterval(() => {
   sns.publish(payload).promise()
   .then(data => {
